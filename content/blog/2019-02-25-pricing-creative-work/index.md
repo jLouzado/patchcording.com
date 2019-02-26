@@ -59,7 +59,7 @@ This is the current market value of what you're doing. This is the step that mos
 
 > Note: Since this is something that doesn't immediately impact users, you will need to get better at talking about these things and "selling them".
 
-- For something like photography maybe that means custom colour-grading for particular clients so they get faster turn-around times. Maybe better customer support, whatever your thing is. Get creative. :)
+- For something like photography maybe design their `Save The Date` for free if it's a couple shoot. Maybe do an extra session with them, whatever your thing is. Get creative. :)
 
 ## Should you Ease off the brakes or press on the Gas-pedal?
 
