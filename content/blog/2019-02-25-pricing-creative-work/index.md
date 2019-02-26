@@ -31,7 +31,8 @@ When someone is trying to earn more, the cycle usually goes something like this:
 1. Client will (reasonably) ask why they're paying more
 1. Panic, and start promising to do more (start justifying the rate)
 1. Wind up doing more work, which takes longer to complete.
-1. Effective hourly-rate is actually the same (or more likely, even lower)
+1. Effective hourly-rate **STAYS THE SAME**
+    - more likely, might even decrease. >_<
 1. Get Frustrated about being underpaid. Cycle back to 1st step.
 
 ## Use a 2-phase approach
@@ -55,13 +56,16 @@ This is the current market value of what you're doing. This is the step that mos
 
 - Once you have your \$30 rate, here is where you start offering more "value-added" services.
 - For software maybe that means [Better Architecture](https://youtu.be/DngAZyWMGR0) with better code-quality, automated tests, documentation (things users might not immediately see)
+
+> Note: Since this is something that doesn't immediately impact users, you will need to get better at talking about these things and "selling them".
+
 - For something like photography maybe that means custom colour-grading for particular clients so they get faster turn-around times. Maybe better customer support, whatever your thing is. Get creative. :)
 
 ## Should you Ease off the brakes or press on the Gas-pedal?
 
-Imagine you're in a car, with both the brake and gas pedal at half-pressed. You want to go faster; do you ease off the brakes or press down on the gas?
+I'll leave you with an analogy to tie things together: Imagine you're in a car, with both the brake and gas pedal at half-pressed. You want to go faster; do you ease off the brakes or press down on the gas?
 
-I heard this analogy somewhere a long time ago (can't remember where) but it really struck a chord with me. When I was younger I think I had more energy and would just default into pressing on the gas. But that way be dragons (and burnout), and as I'm getting older I'm finding much greater returns from removing blockers (internal and external) instead.
+When I was younger I think I had more energy and would just default into pressing on the gas. But that way be dragons (and burnout), and as I'm getting older I'm finding much greater returns from removing blockers (internal and external) instead.
 
 ## Summary
 
