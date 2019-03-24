@@ -37,7 +37,7 @@ If you go into those failing tests and update the tests with the new assumption 
 
 The only reason to change a test should be if the required behaviour of the system changes. In all other cases, we expect the tests to be `Immutable`.
 
-# Achieving `Test Immutability`
+# Achieving Test Immutability
 
 Since we don't have a test-suite for our test-suite, there's increased pressure to follow clean-code guidelines while implementing it. Once tests are written the intention is that they should be encased in ember, so we should aim to get it right the first time.
 
