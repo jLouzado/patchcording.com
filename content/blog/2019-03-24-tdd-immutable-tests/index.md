@@ -19,11 +19,11 @@ There are lots of benefits to TDD, but one that doesn't get as much airtime is t
 
 > A good test-suite gives you **confidence** about the behaviour of your system.
 
-However, that confidence is NOT guaranteed by tooling, it comes from the fact that you followed TDD. You wrote a test, it failed, then you wrote some code and it passed. Therefore, that code works.
+However that confidence is NOT guaranteed by tooling, it comes from the fact that you followed TDD. You wrote a test, it failed, then you wrote some code and it passed. Therefore, that code works.
 
 That means that the only reason you trust your codebase, is because you trust your fellow developers to have _also_ followed TDD. Which is to say, that relying on your test-suite is not a matter of Fact, but as a matter of Trust.
 
-Hence, once a test-suite exists, we need to protect it and _minimize the changes_ done to it.
+Hence once a test-suite exists, we need to protect it and _minimize the changes_ done to it.
 
 Coming back to our hypothetical situation from earlier, Refactoring (by definition) is not supposed to be a change in behaviour. If you're now forced to update test-code in unrelated units, you now need to _manually_ validate those units and (all their usages) before trust is restored in the system.
 
@@ -31,7 +31,7 @@ Coming back to our hypothetical situation from earlier, Refactoring (by definiti
 
 For example, your unit originally set an internal state's `canProceed` and you refactored it to `shouldProceed`. These other units are failing because they were asserting on the value of `canProceed`.
 
-If you go into those failing tests and update the tests with the new assumption, it's _highly_ likely that an error will get made and you might assert `false` instead of `true` or any number of other issues. You might even accidentally delete a test (in more complex scenarios). The worst part of it is that your test suite can't save you from these mistakes because it can't self-test; the Light going Green doesn't mean anything if the test implementation is giving you a false-positive.
+If you go into those failing tests and update the tests with the new assumption it's _highly_ likely that an error will get made and you might assert `false` instead of `true` or any number of other issues. You might even accidentally delete a test (in more complex scenarios). The worst part of it is that your test suite can't save you from these mistakes because it can't self-test; the Light going Green doesn't mean anything if the test implementation is giving you a false-positive.
 
 # Desired Behaviour
 
@@ -110,7 +110,7 @@ describe('createRequest', () => {
 
 "This looks fine", I hear you say, "What's the Issue?". Well, this is basically just a hidden version of having multiple asserts per test.
 
-- Here, there's three asserts:
+- Here there's three asserts:
   - one for the `X-CSRF` header,
   - one for the `content-type` header, and
   - one for the `device`.
@@ -164,7 +164,7 @@ describe('createRequest', () => {
   - Not only it's behaviour, but it's interface and it's dependencies
 - If the testing code is solid, well written, and exhaustive, refactoring Application Code will be trivial!
   - If there's a gap in the tests, that's something that will only be felt in an integration test (or in Production)
-- This is a Process thing, and is up to the team on how to enforce it
+- This is a Process thing and is up to the team on how to enforce it
 
 ## Manage your branches well
 
@@ -174,9 +174,9 @@ describe('createRequest', () => {
 
 # Summary
 
-Ultimately, maintaining the test-suite is a matter of Discipline, Code-Guidelines and good Code-Review process as well as a reliable set of Team-mates in a trustful environment.
+Ultimately maintaining the test-suite is a matter of Discipline, Code-Guidelines and good Code-Review process as well as a reliable set of Team-mates in a trustful environment.
 
-As individual developers, I claim that if we're going to be a craftsmen about anything, we should apply ourselves to the testing code. Our future selves will thank us for it.
+As individual developers I claim that if we're going to be a craftsmen about anything, we should apply ourselves to the testing code. Our future selves will thank us for it.
 
 Good luck out there. :)
 
