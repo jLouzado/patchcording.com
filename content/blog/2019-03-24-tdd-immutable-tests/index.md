@@ -182,11 +182,7 @@ Good luck out there. :)
 
 # References
 
-- TDD Done Right - Tests Immutable to Refactor
-  - https://developer20.com/tdd-done-right/
-- Unit Testing Smells
-  - https://dzone.com/articles/unit-testing-smells-what-are-your-tests-telling-yo
-- TDD
-  - https://martinfowler.com/bliki/TestDrivenDevelopment.html
-- UncleBobExpecting Professionalism (35:05 - 41:40)
-  - https://youtu.be/BSaAMQVq01E?t=2105
+- [TDD Done Right - Tests Immutable to Refactor](https://developer20.com/tdd-done-right/)
+- [Unit Testing Smells](https://dzone.com/articles/unit-testing-smells-what-are-your-tests-telling-yo)
+- [TDD | Martin Fowler](https://martinfowler.com/bliki/TestDrivenDevelopment.html)
+- [UncleBob Expecting Professionalism](https://youtu.be/BSaAMQVq01E?t=2105) (35:05 - 41:40)
