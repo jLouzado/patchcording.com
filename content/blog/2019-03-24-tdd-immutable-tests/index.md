@@ -21,9 +21,9 @@ There are lots of benefits to TDD, but one that doesn't get as much airtime is t
 
 However that confidence is NOT guaranteed by tooling, it comes from the fact that you followed TDD. You wrote a test, it failed, then you wrote some code and it passed. Therefore, that code works.
 
-That means that the only reason you trust your codebase, is because you trust your fellow developers to have _also_ followed TDD. Which is to say, that relying on your test-suite is not a matter of Fact, but as a matter of Trust.
+That means that the only reason you trust your codebase is because you trust your fellow developers to have _also_ followed TDD. Which is to say, that relying on your test-suite is not a matter of Fact, but a matter of Trust.
 
-Hence once a test-suite exists, we need to protect it and _minimize the changes_ done to it.
+Hence once a test-suite exists, we need to protect our Trust in it by minimizing changes to it.
 
 Coming back to our hypothetical situation from earlier, Refactoring (by definition) is not supposed to be a change in behaviour. If you're now forced to update test-code in unrelated units, you now need to _manually_ validate those units and (all their usages) before trust is restored in the system.
 
@@ -39,7 +39,7 @@ The only reason to change a test should be if the required behaviour of the syst
 
 # Achieving `Test Immutability`
 
-Since we don't have a test-suite for our test-suite, there's increased pressure to follow the best possible practices and guidelines while implementing the tests. Once tests are written the intention is that they should be encased in ember, so we should aim to get it right the first time.
+Since we don't have a test-suite for our test-suite, there's increased pressure to follow clean-code guidelines while implementing it. Once tests are written the intention is that they should be encased in ember, so we should aim to get it right the first time.
 
 Here are some suggestions:
 
