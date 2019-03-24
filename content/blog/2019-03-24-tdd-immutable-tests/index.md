@@ -62,10 +62,10 @@ That's okay, favour an explicit name over a short sentence. Atleast it's clear. 
 ```javascript
 describe("launch the rocket", () => {
     context("all ready", () => {
-        test('should launch rocket")
+        test("should launch rocket")
     })
     context("not ready", () => {
-        test('should do nothing")
+        test("should do nothing")
     })
 })
 ```
