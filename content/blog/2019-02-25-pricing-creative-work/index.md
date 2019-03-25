@@ -32,7 +32,7 @@ When someone is trying to earn more, the cycle usually goes something like this:
 1. Panic, and start promising to do more (start justifying the rate)
 1. Wind up doing more work, which takes longer to complete.
 1. Effective hourly-rate **STAYS THE SAME**
-    - more likely, might even decrease. >_<
+   - more likely, might even decrease. >\_<
 1. Get Frustrated about being underpaid. Cycle back to 1st step.
 
 ## Use a 2-phase approach
