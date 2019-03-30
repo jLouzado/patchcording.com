@@ -35,7 +35,14 @@ If you go into those failing tests and update the tests with the new assumption 
 
 # Desired Behaviour
 
-The only reason to change a test should be if the required behaviour of the system changes. In all other cases, we expect the tests to be `Immutable`.
+The only reason to change a test should be if the required behaviour of the system changes. Either:
+
+- There's a bug in your implementation that you need to fix, or
+- There's a requirement that's a [breaking change](https://semver.org/)
+
+> Tests don't guarantee bug-free code, they're about enabling faster feedback.
+
+In all other cases, we expect the tests to be `Immutable` i.e. Refactoring should not require a change in tests.
 
 # Achieving Test Immutability
 
@@ -60,13 +67,13 @@ That's okay, favour an explicit name over a short sentence. Atleast it's clear. 
   - use `context` to group tests by common assumptions or world-states
 
 ```javascript
-describe("launch the rocket", () => {
-    context("all ready", () => {
-        test("should launch rocket")
-    })
-    context("not ready", () => {
-        test("should do nothing")
-    })
+describe('launch the rocket', () => {
+  context('all ready', () => {
+    test('should launch rocket')
+  })
+  context('not ready', () => {
+    test('should do nothing')
+  })
 })
 ```
 
