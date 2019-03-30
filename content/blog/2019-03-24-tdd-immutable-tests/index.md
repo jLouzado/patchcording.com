@@ -60,6 +60,37 @@ If you're writing the test name and it's running a bit lengthy, you might be try
 
 That's okay, favour an explicit name over a short sentence. Atleast it's clear. And anyway, you can fix that in the next point.
 
+## Use Domain-Language while naming your tests
+
+### Use terms relevant to your users
+
+- Bad: `$1.00 - $2000.00 = No Interest`
+- Good: `Loans of $2000 and below are interest-free`
+
+### Describe expected behaviour in the test name, rather than in the `expected` result
+
+- Passable:
+
+```javascript
+test('$2001.00 Loan Amount', () => {
+  assert.strictEqual(
+    calculateInterest('$2001.00' /*actual*/, '$0.09' /*expected*/)
+  )
+})
+```
+
+- Better:
+
+```javascript
+test('A loan of $2001.00 owes $0.09 interest', () => {
+  assert.strictEqual(
+    calculateInterest('$2001.00' /*actual*/, '$0.09' /*expected*/)
+  )
+})
+```
+
+Your unit tests also serve as documentation; make them as readable as possible for another developer who might not have the context you have right now.
+
 ## Group your tests semantically
 
 - Read up on [RSpec]
