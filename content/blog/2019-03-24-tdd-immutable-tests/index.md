@@ -196,12 +196,23 @@ As individual developers I claim that if we're going to be a craftsmen about any
 
 Good luck out there. :)
 
+# Further Reading
+
+- [You don't know TDD](https://itnext.io/you-dont-know-tdd-691efe670094)
+  - This 4 part series dives deep while implementing the Money Lender example.
+  - TDD is endlessly fascinating; even solving compilation errors is sort of a [Red / Green / Refactor] cycle
+  - This series of posts is truly something beautiful to witness, would highly recommend. :)
+- [More Typing, Less Testing | TDD With Static Types](https://spin.atomicobject.com/2014/12/09/typed-language-tdd-part1/)
+  - Adding static-types to this discussion takes everything to overdrive.
+  - basically it add a `Add Types` step into the [Red / Green / Refactor] cycle
+  - types help create your interfaces with even more specificity.
+
 # References
 
 - [TDD Done Right - Tests Immutable to Refactor](https://developer20.com/tdd-done-right/)
 - [Unit Testing Smells](https://dzone.com/articles/unit-testing-smells-what-are-your-tests-telling-yo)
-- [TDD | Martin Fowler](https://martinfowler.com/bliki/TestDrivenDevelopment.html)
 - [UncleBob Expecting Professionalism](https://youtu.be/BSaAMQVq01E?t=2105) (35:05 - 41:40)
 
 [dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
 [rspec]: (https://lmws.net/describe-vs-context-in-rspec)
+[red / green / refactor]: https://martinfowler.com/bliki/TestDrivenDevelopment.html
