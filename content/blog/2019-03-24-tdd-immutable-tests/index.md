@@ -52,9 +52,9 @@ Here are some suggestions:
 
 ## Name your tests explicitly
 
-Bad: `test('should set correct headers'),`
+Bad: `test('should set correct headers')`
 
-Good: `` test('should set the `device` header to `mobile`') ``
+Good: `test('should set the 'device' header to 'mobile')`
 
 If you're writing the test name and it's running a bit lengthy, you might be trying to test too many things or might have too many state-values to list out.
 
