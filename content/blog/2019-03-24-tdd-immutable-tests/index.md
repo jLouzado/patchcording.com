@@ -62,7 +62,7 @@ That's okay, favour an explicit name over a short sentence. Atleast it's clear. 
 
 ## Group your tests semantically
 
-- Read up on [RSpec](https://lmws.net/describe-vs-context-in-rspec)
+- Read up on [RSpec]
   - use `describe` to denote the behaviour you're testing,
   - use `context` to group tests by common assumptions or world-states
 
@@ -89,6 +89,15 @@ describe('launch the rocket', () => {
   - the downside is that these extra things aren't documented in the test-name
   - tomorrow those extra asserts might get removed because they don't look important
 - avoid all this drama, just keep a single assert per test.
+
+## Minimize data-sharing across tests
+
+You might be tempted to start defining common objects and reusing them across tests, resist that urge.
+
+- It might seem like you're following [DRY] but it makes your tests less readable
+- it might also inadvertently introduce bugs into your test code
+- if something is really so generic that it can be included across tests, make a library out of it
+  - and be sure to guarantee 100% test-coverage of any library you use.
 
 ## Don't assert on an Object
 
@@ -193,3 +202,6 @@ Good luck out there. :)
 - [Unit Testing Smells](https://dzone.com/articles/unit-testing-smells-what-are-your-tests-telling-yo)
 - [TDD | Martin Fowler](https://martinfowler.com/bliki/TestDrivenDevelopment.html)
 - [UncleBob Expecting Professionalism](https://youtu.be/BSaAMQVq01E?t=2105) (35:05 - 41:40)
+
+[dry]: https://en.wikipedia.org/wiki/Don%27t_repeat_yourself
+[rspec]: (https://lmws.net/describe-vs-context-in-rspec)
