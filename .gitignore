@@ -70,3 +70,7 @@ yarn-error.log
 
 # Editors - Webstorm
 .idea/
+.vscode/
+
+# Build - Output
+out/
