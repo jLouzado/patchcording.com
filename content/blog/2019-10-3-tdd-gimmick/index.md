@@ -30,94 +30,7 @@ If we have coverage we can have confidence, and with that confidence you get som
 
 So confidence (via code-coverage) is the whole game; you will see the above benefits in your codebase to the extent that the requirements are covered, simple as that.
 
-## What does "Produced By TDD" mean?
-
-First, a quick recap of TDD's rules.
-
-- If you want to write new code (or make changes to an existing unit) first write one (and only one) failing test.
-  - Write minimum code necessary to produce a failure (compilation errors count as failures)
-  - this is the `RED` phase.
-- Only write as much code as is required to fix that failure, nothing more.
-  - this is the `GREEN` phase
-
-!!!note Set your test-suite to auto-run on every save, so you get quick feedback as you make changes.
-
-- If there are any refactors or clean-ups required, they can be done as needed
-  - This is the `REFACTOR` phase, where no new behaviour is added.
-- Rinse and repeat till all your requirements are implemented.
-
-In practice it might look like this. We'll take a simple example to start with.
-
-Say, I want to write a function `mul2` that returns the product of two arguments:
-
-First create the test-file: `mul2.test.ts` and start writing the test:
-
-```ts
-it('should return the product', () => {
-  const actual = mul2()
-})
-```
-
-As soon as this is written, the compiler will complain that `mul2` doesn't exist. Only at this point do you actually create the `mul2.ts` file and write:
-
-```ts
-export const mul2 = () => {
-  throw 'not implemented'
-}
-```
-
-All you know is that it's a function, which is what you've declared. No implementation yet, no arguments either.
-
-Back to the test:
-
-```ts
-it('should return the product', () => {
-  const actual = mul2(2, 3)
-})
-```
-
-The compiler will complain: "Function doesn't accept values". Fair enough, now is a good time to think about the "API" of our function:
-
-- What are the order of the arguments,
-  - important if the function might be curried
-- Can any of them be null? do any of them have default values? What are their names?
-- What's the return type of the function?
-
-```ts
-export const mul2 = (a: number, b: number) => {
-  throw 'not implemented'
-}
-```
-
-Since it's just a simple function, the types are pretty basic but if there were more complex behaviour, here's where we would take care of that[^typings].
-
-Back to the test, now we can add our assertion:
-
-```ts
-it('should return the product', () => {
-  const actual = mul2(2, 3)
-  const expected = 6
-  assert.strictEqual(actual, expected)
-})
-```
-
-The test itself is now runnable. Run it, and it'll throw "Not Implemented" as we told it to. This is the point people skip to when they think of unit-tests, but it takes a lot of thinking even to get to this point; we're just so used to doing it we forget to account for it.
-
-```ts
-export const mul2 = (a: number, b: number) => {
-  return a * b
-}
-```
-
-With that your test will pass, and you can start with the next test!
-
-## But this way of writing tests must be super annoying
-
-Writing code this way is definitely a little unnatural at first, but it makes sure that nothing extraneous ever enters your code base. When people talk about Lean-Testing, and only writing the minimum tests required, this is really what that looks like; no more tests than necessary, no more code than needed.
-
-Over time your intuition for this style will grow and your compiler will come to feel like a helpful (slightly pedantic) aide who just wants the best for you and your code. :)
-
-## Cool, but I could just write the function and then write the test afterwards
+## But I could just write the function and then the tests and get the same coverage
 
 As far as I've spoken to people, no one disagrees with the need to have some unit tests. That means we all agree that it's possible to write buggy code. That implies that our unit-tests could _also_ have bugs; how would we detect that if we wrote it second?
 
@@ -262,7 +175,94 @@ Speaking of architecture, structure your code so that more things are unit-testa
 
 I can't stress this enough though, almost everything related to Application Development can be done via TDD. As much as possible, irrespective of the structure of your application, extract your business logic into pure functions and TDD the heck out of it. You'll thank yourself later.
 
-## Fiinnnneeeee, lemme think about it
+## Wait, what does "Produced By TDD" even mean? Your examples are a bit weird
+
+That's a great question, this is something like [Wittgenstein's Beetle](https://medium.com/@fagnerbrack/wittgenstein-s-beetle-in-software-engineering-dcea89a5db92) where everyone has a thing in their box called a beetle and can only see their own box's contents. So then people might say "TDD is good" or "TDD is bad" and be talking about entirely different things. Here's what I mean when I'm talking about TDD:
+
+A quick recap of TDD's rules from [Uncle Bob](http://www.javiersaldana.com/articles/tech/refactoring-the-three-laws-of-tdd):
+
+- You are not allowed to write any production code unless it is to make a failing unit test pass.
+- You are not allowed to write any more of a unit test than is sufficient to fail; and compilation failures are failures.
+- You are not allowed to write any more production code than is sufficient to pass the one failing unit test.
+
+Therefore,
+
+- First, write only enough of a unit test to fail.
+  - `RED` phase
+- Write only enough production code to make the failing unit test pass.
+  - `GREEN` phase.
+- Repeat till all requirements are met, refactor as needed.
+
+In practice it might look like this. We'll take a simple example to start with. Say, I want to write a function `mul2` that returns the product of two arguments:
+
+First create the test-file: `mul2.test.ts` and start writing the test:
+
+```ts
+it('should return the product', () => {
+  const actual = mul2()
+})
+```
+
+As soon as this is written, the compiler will complain that `mul2` doesn't exist. Only at this point do you actually create the `mul2.ts` file and write:
+
+```ts
+export const mul2 = () => {
+  throw 'not implemented'
+}
+```
+
+All you know is that it's a function, which is what you've declared. No implementation yet, no arguments either.
+
+Back to the test:
+
+```ts
+it('should return the product', () => {
+  const actual = mul2(2, 3)
+})
+```
+
+The compiler will complain: "Function doesn't accept values". Fair enough, now is a good time to think about the "API" of our function:
+
+- What are the order of the arguments,
+  - important if the function might be curried
+- Can any of them be null? do any of them have default values? What are their names?
+- What's the return type of the function?
+
+```ts
+export const mul2 = (a: number, b: number) => {
+  throw 'not implemented'
+}
+```
+
+Since it's just a simple function, the types are pretty basic but if there were more complex behaviour, here's where we would take care of that[^typings].
+
+Back to the test, now we can add our assertion:
+
+```ts
+it('should return the product', () => {
+  const actual = mul2(2, 3)
+  const expected = 6
+  assert.strictEqual(actual, expected)
+})
+```
+
+The test itself is now runnable. Run it, and it'll throw "Not Implemented" as we told it to. This is the point people skip to when they think of unit-tests, but it takes a lot of thinking even to get to this point; we're just so used to doing it we forget to account for it.
+
+```ts
+export const mul2 = (a: number, b: number) => {
+  return a * b
+}
+```
+
+With that your test will pass, and you can start with the next test!
+
+## But this way of writing tests must be super annoying
+
+Writing code this way is definitely a little unnatural at first, but it makes sure that nothing extraneous ever enters your code base. When people talk about Lean-Testing, and only writing the minimum tests required, this is really what that looks like; no more tests than necessary, no more code than needed.
+
+Over time your intuition for this style will grow and your compiler will come to feel like a helpful (slightly pedantic) aide who just wants the best for you and your code. :)
+
+## Hmm, lemme think about it
 
 Awesome! :smiley:
 
