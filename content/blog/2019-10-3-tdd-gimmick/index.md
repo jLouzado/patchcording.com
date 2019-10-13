@@ -3,15 +3,17 @@ title: 'Is TDD just a gimmick?'
 date: '2019-03-24T12:51:00.314Z'
 ---
 
+# Is TDD A Gimmick?
+
 [[toc]]
 
-# Statement
+## What's the big deal?
 
-Every day we see new frameworks rise and fall, and a certain amount of skepticism is healthy to keep from jumping on every new thing that comes along.
-
-Having said that, something that has radically improved the quality and maintainability of the software I've written over the past year has been `Test Driven Development` (TDD for short). From my perspective writing the test **before** the implementation is not just a gimmick:
+Something that has radically improved the quality and maintainability of the software I've written over the past year has been `Test-Driven Development` (TDD for short). My claim is that writing the test **before** the implementation is not just a gimmick:
 
 > Unit tests produced by TDD guarantee code-coverage in a way that tests written post-implementation cannot.
+
+As developers I understand that there's a healthy amount of skepticism we all have so let's go through some of the common responses I get when people hear that claim.
 
 ## Maybe it does, but why should I care about code-coverage?
 
