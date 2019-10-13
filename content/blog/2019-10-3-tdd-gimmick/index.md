@@ -148,6 +148,76 @@ The fact that the test is written first solves this problem. If the test is corr
 
 In the example above you expect it to fail, so you'll revisit the test-code when you see it's passing even if no code is present. The rules push you to prioritize confidence in the test first before starting on the change you want to make.
 
+## But won't I need to keep updating old tests if I write them before implementation?
+
+No, not really. Ideally once you write a test, it should be immutable as long as your requirements aren't changing.
+
+If you find yourself doing TDD, and then going back over old-tests then a couple of things might be happening:
+
+### Too much code too soon
+
+Let's say you're trying to implement an expression: $A+!B$ (A or not-B). The first would be:
+
+```ts
+it('should return true if A is true')
+```
+
+What should the code be? Your impulse might be to write the following:
+
+```ts
+if (A) return true
+```
+
+However, the simplest way to make this test pass would be to just write:
+
+```ts
+return true
+```
+
+It sounds ridiculous for simple examples, but when writing complex algorithms it's common to just put it down as it's in our heads rather than let the tests really drive the design. If you write the tests to assert only exactly what you want, and then allow them to drive the implementation then the tests remain as simple as possible. Once all the requirements and boundary conditions are asserted, then you can optimize away for readability, performance, re-usability, etc and you can have confidence that the behaviour is guaranteed to be correct.
+
+For a more complex example check out [The Missing Practical Step in TDD](https://itnext.io/the-missing-practical-step-by-step-test-driven-development-a7140ca4b71)
+
+## Your tests are too specific, or too restrictive
+
+This might sound funny, but it's possible for tests to be overly specific. We've touched on this before, but tests should really be agnostic of implementation. In other words they should care about _behaviour_ and not be asserting on structure.
+
+The obvious example would be the test from the earlier section where we're asserting a DOM structure but there's other ways that a test can be too restrictive.
+
+Back to the [Flux] pattern, your first test might be:
+
+```ts
+it('should fire Action-A1 when a X is true')
+```
+
+and your test might be:
+
+```ts
+assert.strictEqual(actual, action.of(A1))
+```
+
+Now, you write a new test:
+
+```ts
+it('should fire Action-A2 when X is true')
+```
+
+and you'll write the second test as follows:
+
+```ts
+assert.strictEqual(actual, action.of(A2))
+```
+
+The problem is that now you're stuck; test1 and test2 are both mutually exclusive because something can't be strictly equal to two things at the same time. In this case, saying `strictEqual` is overly specific; it's saying "this and only this is allowed to happen".
+
+What might be closer to your intent is to say "whatever else is also happening, I _also_ want this to happen". So you could rewrite your tests using some kind of `contains` utility as such:
+
+```ts
+assert.isTrue(actual.contains(action.of(A1)))
+```
+
+Now tomorrow if any number of actions are fired, your test is making sure that this action is also present. And if you've followed TDD so far, extra actions won't be fired from anywhere.
+
 ## Hmm... Well what about Logical Errors, TDD is not going to save me there
 
 TDD doesn't guarantee that your code is bug-free. It just guarantees that if a line is deleted that a test will fail. Therefore it's still your responsibility to write the correct tests. For example if the requirement was to multiply two numbers, but your tests are checking if the code adds the two together then your code is still wrong.
@@ -182,7 +252,7 @@ For application development, almost everything is a good candidate for TDD. One 
 
 You _could_ do it, but then tomorrow if you need to return `<div>Hello <b>World!</b></div>` should the test really break? I mean, I've only added an enhancement, the old test should "technically" still be valid.
 
-The above example doesn't mean that all view-related things are automatically not eligible for TDD. To take an example of an App written in the Flux pattern, you might have a rock-solid reducer ready and waiting but then you might forget to actually fire an action from the view when a button is clicked. Packages like [react-testing-library](https://github.com/testing-library/react-testing-library) are good for use-cases like that, and can provide coverage for your views too.
+The above example doesn't mean that all view-related things are automatically not eligible for TDD. To take an example of an App written in the [Flux] pattern, you might have a rock-solid reducer ready and waiting but then you might forget to actually fire an action from the view when a button is clicked. Packages like [react-testing-library](https://github.com/testing-library/react-testing-library) are good for use-cases like that, and can provide coverage for your views too.
 
 ## Any others?
 
@@ -208,3 +278,4 @@ Good luck out there. :pray:
 [^behaviour-over-structure]: This is similar to the previous example, where we don't want to write a test to guarantee a particular DOM structure. Check out [the tragedy of 100% code-coverage](https://dev.to/danlebrero/the-tragedy-of-100-code-coverage) for more.
 
 [your tests should be immutable]: https://dev.to/jlouzado/tdd-your-unit-tests-should-be-immutable-119m
+[flux]: https://www.freecodecamp.org/news/an-introduction-to-the-flux-architectural-pattern-674ea74775c9/
