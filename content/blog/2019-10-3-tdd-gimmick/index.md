@@ -40,9 +40,9 @@ First, a quick recap of TDD's rules.
   - compilation errors count as failures, and
 - Only write as much code as is required to fix that failure, nothing more.
   - this is the `GREEN` phase
+- If there are any refactors or clean-ups required, they can be done as needed
+  - This is the `REFACTOR` phase, where no new behaviour is added.
 - Rinse and repeat till all your requirements are implemented.
-- Go back over your implementation and clean-up.
-  - This is the `REFACTOR` phase.
 
 In practice it might look like this. We'll take a simple example to start with.
 
