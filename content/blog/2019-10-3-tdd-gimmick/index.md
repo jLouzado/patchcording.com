@@ -63,9 +63,9 @@ In the example above you expect it to fail, so you'll revisit the test-code when
 
 ## But won't I need to keep updating old tests if I write them before implementation?
 
-No, not really. Ideally once you write a test, it should be immutable as long as your requirements aren't changing.
+No, not really. Ideally once you write a test, it should be immutable as long as the requirement doesn't change.
 
-If you find yourself doing TDD, and then going back over old-tests then a couple of things might be happening:
+If you find yourself doing TDD, and then going back over old-tests a lot then a couple of things might be going wrong:
 
 ### Too much code too soon
 
@@ -75,19 +75,21 @@ Let's say you're trying to implement an expression: $A+!B$ (A or not-B). The fir
 it('should return true if A is true')
 ```
 
-What should the code be? Your impulse might be to write the following:
+What should the implementation be? Your impulse might be to write the following:
 
 ```ts
 if (A) return true
 ```
 
-However, the simplest way to make this test pass would be to just write:
+However, the least code required to make this test pass would simply be:
 
 ```ts
 return true
 ```
 
-It sounds ridiculous for simple examples, but when writing complex algorithms it's common to just put it down as it's in our heads rather than let the tests really drive the design. If you write the tests to assert only exactly what you want, and then allow them to drive the implementation then the tests remain as simple as possible. Once all the requirements and boundary conditions are asserted, then you can optimize away for readability, performance, re-usability, etc and you can have confidence that the behaviour is guaranteed to be correct.
+It sounds ridiculous for simple examples, but when writing complex algorithms it's common to fall into the trap of over-engineering. However, [no abstraction is better than the wrong one](https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction) and being disciplined about writing minimal code helps us get all the examples working before trying to solve for other concerns like performance, reusability, maintainability, etc.
+
+In a way, TDD pushes us to focus on one thing at a time so that we can be completely focused on it. One test at a time, one solution at a time, and then refactor for one purpose at a time. When you're doing one thing, you don't have to hold everything in your mind since you know that the test-suite has your back.
 
 For a more complex example check out [The Missing Practical Step in TDD](https://itnext.io/the-missing-practical-step-by-step-test-driven-development-a7140ca4b71)
 
@@ -141,7 +143,7 @@ In such a scenario, TDD helps in two ways:
   - since your `expected` value will clearly be something different than the requirement, someone can flag it as an issue
 - once the error is spotted, it becomes easier to rewrite the bad test or to add tests for missing edge cases.
 
-Since refactoring is easier, this whole process happens much more quickly. And yes, while fixing one issue you're less likely to introduce a regression even in this new feature.
+Since refactoring is easier, this whole process happens much more quickly. And yes, while fixing one issue you're less likely to introduce a regression.
 
 ## This is all horribly complicated! I'm a pretty good programmer, I don't need all this
 
