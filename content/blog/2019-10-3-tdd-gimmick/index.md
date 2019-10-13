@@ -34,10 +34,9 @@ So confidence (via code-coverage) is the whole game; you will see the above bene
 
 First, a quick recap of TDD's rules.
 
-- If you want to write new code (or make changes to an existing unit) first write a failing test.
+- If you want to write new code (or make changes to an existing unit) first write one (and only one) failing test.
+  - Write minimum code necessary to produce a failure (compilation errors count as failures)
   - this is the `RED` phase.
-- Only write as much code as is necessary to produce a failure.
-  - compilation errors count as failures, and
 - Only write as much code as is required to fix that failure, nothing more.
   - this is the `GREEN` phase
 - If there are any refactors or clean-ups required, they can be done as needed
