@@ -170,6 +170,12 @@ In the worst case, they're under a lot of pressure so they make the change that 
 
 At it's best, TDD is a way to communicate your decisions without needing to write extensive documentation that no one will ever read (or maintain when they make changes). Good-quality unit tests save such an incredible amount of time, and ultimately that's more time that you have to work in peace.
 
+## What exactly are good-quality tests?
+
+One key aspect of a "good" test would be that they are "immutable to refactoring". That means that once a test is written, it ideally shouldn't change as long as the requirement hasn't changed. I've gone into much more detail in a separate article that you can check out later:
+
+> [Your Tests Should Be Immutable]
+
 ## Are there any cases where one shouldn't use TDD?
 
 For application development, almost everything is a good candidate for TDD. The one exception for frontend development would be if your function returns a particular DOM structure, there's no point writing a test like `Assert <div>Hello World!</div>` and then having a function that just returns `<div>Hello World!</div>`.
@@ -192,10 +198,12 @@ Awesome! :smiley:
 
 If you're looking to read more about TDD, I'd highly recommend [You Don't Know TDD](https://itnext.io/you-dont-know-tdd-691efe670094) which was what I used when I was first learning about this. It's a really rich resource and he deals with much more complex examples than I have here.
 
-In the meantime if you'd like to know how to write unit tests in such a way that they don't break randomly when you're doing some reasonable refactoring, check out this piece I wrote called [Your Tests Should Be Immutable](https://dev.to/jlouzado/tdd-your-unit-tests-should-be-immutable-119m#dont-assert-on-an-object) so that you never have to touch your tests again unless a requirement changes.
+In the meantime if you'd like to know how to write unit tests in such a way that they don't break randomly when you're doing some reasonable refactoring, check out this piece I wrote called [Your Tests Should Be Immutable] so that you never have to touch your tests again unless a requirement changes.
 
 Good luck out there. :pray:
 
 [^del]: Assume the deletion was accidental, and in such a way that the code still compiles.
 [^typings]: If the typings are very complex, you might even want some way to develop _those_ using TDD, but that's another topic entirely. Check out something like [typings-checker](https://www.npmjs.com/package/typings-checker) if you're interested.
 [^false-positive]: Run it in your IDE and check for yourself if you don't believe me.
+
+[your tests should be immutable]: https://dev.to/jlouzado/tdd-your-unit-tests-should-be-immutable-119m
