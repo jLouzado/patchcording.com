@@ -115,7 +115,7 @@ With that your test will pass, and you can start with the next test!
 
 Writing code this way is definitely a little unnatural at first, but it makes sure that nothing extraneous ever enters your code base. When people talk about Lean-Testing, and only writing the minimum tests required, this is really what that looks like; no more tests than necessary, no more code than needed.
 
-Over time the intuition for this style will build and your compiler will be the best pair-programming partner you could ever ask for.
+Over time your intuition for this style will grow and your compiler will come to feel like a helpful (slightly pedantic) aide who just wants the best for you and your code. :)
 
 ## Cool, but I could just write the function and then write the test afterwards
 
