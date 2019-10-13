@@ -186,11 +186,11 @@ The above example doesn't mean that all view-related things are automatically no
 
 ## Any others?
 
-Yes, if you're writing a new package, and there's two potential APIs that would both work equally fine but they both have different (say) performance implications based on their implementation then that might be a bad use-case for TDD. Tests can't help you choose between two different function signatures, for example.
+Yes, if you're writing a new package, and there's two potential APIs that would both work equally fine but they both have different (say) performance implications then that might be a bad use-case for TDD. Tests can't help you choose between two different function signatures, for example. In such a case you're really out near the edge of software-development and you're almost in research mode. Once you've sorted out architecture and explored the space sufficiently, that's when TDD might be of more use.
 
-In such a case you're really out near the edge of software-development and you're almost in research mode. Once you've sorted out architecture and explored the space sufficiently, that's when TDD might be of more use.
+Speaking of architecture, structure your code so that more things are unit-testable, otherwise you end up with scenarios where you have to compulsively mock everything and you're testing "structure", rather than "behaviour"[^behaviour-over-structure].
 
-I can't stress this enough though, almost everything related to Application Development can be done via TDD. As much as possible, extract your business logic into pure functions and TDD the heck out of it. You'll thank yourself later.
+I can't stress this enough though, almost everything related to Application Development can be done via TDD. As much as possible, irrespective of the structure of your application, extract your business logic into pure functions and TDD the heck out of it. You'll thank yourself later.
 
 ## Fiinnnneeeee, lemme think about it
 
@@ -205,5 +205,6 @@ Good luck out there. :pray:
 [^del]: Assume the deletion was accidental, and in such a way that the code still compiles.
 [^typings]: If the typings are very complex, you might even want some way to develop _those_ using TDD, but that's another topic entirely. Check out something like [typings-checker](https://www.npmjs.com/package/typings-checker) if you're interested.
 [^false-positive]: Run it in your IDE and check for yourself if you don't believe me.
+[^behaviour-over-structure]: This is similar to the previous example, where we don't want to write a test to guarantee a particular DOM structure. Check out [the tragedy of 100% code-coverage](https://dev.to/danlebrero/the-tragedy-of-100-code-coverage) for more.
 
 [your tests should be immutable]: https://dev.to/jlouzado/tdd-your-unit-tests-should-be-immutable-119m
