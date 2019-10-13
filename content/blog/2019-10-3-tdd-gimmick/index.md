@@ -158,7 +158,7 @@ In such a scenario, TDD helps in two ways:
   - since your `expected` value will clearly be something different than the requirement, someone can flag it as an issue
 - once the error is spotted, it becomes easier to rewrite the bad test or to add tests for missing edge cases.
 
-Since refactoring is easier, this whole process happens much more quickly. And yes, while fixing one issue you're less likely to introduce a a regression even in this new feature.
+Since refactoring is easier, this whole process happens much more quickly. And yes, while fixing one issue you're less likely to introduce a regression even in this new feature.
 
 ## This is all horribly complicated! I'm a pretty good programmer, I don't need all this
 
