@@ -162,13 +162,9 @@ Since refactoring is easier, this whole process happens much more quickly. And y
 
 ## This is all horribly complicated! I'm a pretty good programmer, I don't need all this
 
-I felt the same way when first starting out. Even now, when discussing some of the finer points of TDD it can feel a little overly-cautious and pessimistic. The thing is though, if there's more than 2 programmers working on a project it's just not possible to always be available for everyone.
+That might be true, you might not need tests in order to produce good quality code. However, you're not the only person on your team. Also, you're probably not going to be on that team forever; tomorrow you might move on to another project or even to another company. What happens then?
 
-Imagine you've written a function, and someone wants to make a change to it. If they knew that the tests were high-quality, they could just figure it out themselves and be fairly confident that they weren't doing anything wrong. In the absence of a test-suite they would (hopefully) come and sit on your head and work things out with you.
-
-In the worst case, they're under a lot of pressure so they make the change that re-introduces some subtle bug that you'd already taken care of initially. The bug might only get discovered months later, at which point maybe the dev who introduced the problematic-change is on leave and the commit message just says "fixed issue" so now you're really screwed.
-
-At it's best, TDD is a way to communicate your decisions without needing to write extensive documentation that no one will ever read (or maintain when they make changes). Good-quality unit tests save such an incredible amount of time, and ultimately that's more time that you have to work in peace.
+Writing tests is a way to communicate the behaviour of the code without needing to write extensive documentation that no one will ever read (or maintain). Good-quality unit tests save an incredible amount of dev-hours, and can help a team to maintain a stable velocity as it grows.
 
 ## What exactly are good-quality tests?
 
@@ -176,13 +172,17 @@ One key aspect of a "good" test would be that they are "immutable to refactoring
 
 > [Your Tests Should Be Immutable]
 
-## Are there any cases where one shouldn't use TDD?
+## Okay, but how does that translate to "saved" dev-hours?
 
-For application development, almost everything is a good candidate for TDD. The one exception for frontend development would be if your function returns a particular DOM structure, there's no point writing a test like `Assert <div>Hello World!</div>` and then having a function that just returns `<div>Hello World!</div>`.
+One of hardest parts of building software is simply managing the communication overhead as the team scales. The number of connections between people is proportional to $N^2$ for $N$ members. So very quickly, it becomes almost impossible to keep everyone in sync if it requires talking to everyone about everything. Various solutions like "write documentation" or "write code that is so clear it doesn't need documentation" are all theoretically possible but are largely pipe-dreams. If it's possible to have a test-suite for something, it's the ultimate safety-net and allows developers to make changes without worrying.
 
-You _could_ do it, but then tomorrow if you need to return `<div>Hello <b>World!</b></div>` should the test really break? I mean, I added an enhancement, the old test should "technically" still be valid.
+## Does that mean there any cases where one shouldn't or can't use TDD?
 
-This doesn't mean that all view-related things cannot be done via TDD though. You might have a rock-solid reducer implemented, but if you forget to actually fire an action when a button is clicked then your app is still buggy. Packages like [react-testing-library](https://github.com/testing-library/react-testing-library) help with that problem.
+For application development, almost everything is a good candidate for TDD. One exception is where it's not possible to write a test without being over-specific. For example there's little value in writing a test like `Assert that function returns <div>Hello World!</div>` and then having a function that returns `<div>Hello World!</div>`.
+
+You _could_ do it, but then tomorrow if you need to return `<div>Hello <b>World!</b></div>` should the test really break? I mean, I've only added an enhancement, the old test should "technically" still be valid.
+
+The above example doesn't mean that all view-related things are automatically not eligible for TDD. To take an example of an App written in the Flux pattern, you might have a rock-solid reducer ready and waiting but then you might forget to actually fire an action from the view when a button is clicked. Packages like [react-testing-library](https://github.com/testing-library/react-testing-library) are good for use-cases like that, and can provide coverage for your views too.
 
 ## Any others?
 
