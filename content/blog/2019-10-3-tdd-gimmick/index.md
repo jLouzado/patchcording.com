@@ -39,6 +39,9 @@ First, a quick recap of TDD's rules.
   - this is the `RED` phase.
 - Only write as much code as is required to fix that failure, nothing more.
   - this is the `GREEN` phase
+
+!!!note Set your test-suite to auto-run on every save, so you get quick feedback as you make changes.
+
 - If there are any refactors or clean-ups required, they can be done as needed
   - This is the `REFACTOR` phase, where no new behaviour is added.
 - Rinse and repeat till all your requirements are implemented.
