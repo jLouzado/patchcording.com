@@ -270,9 +270,11 @@ Over time your intuition for this style will grow and your compiler will come to
 
 If you're looking to read more about TDD, I'd highly recommend [You Don't Know TDD](https://itnext.io/you-dont-know-tdd-691efe670094) which was what I used when I was first learning about this. It's a really rich resource and he deals with much more complex examples than I have here.
 
-In the meantime if you'd like to know how to write unit tests in such a way that they don't break randomly when you're doing some reasonable refactoring, check out this piece I wrote called [Your Tests Should Be Immutable] so that you never have to touch your tests again unless a requirement changes.
+In the meantime if you'd like to know how more about writing tests that don't break during refactoring, check out:
 
-Good luck out there. :pray:
+> [Your Tests Should Be Immutable](https://dev.to/jlouzado/tdd-your-unit-tests-should-be-immutable-119m)
+
+Feel free to hit me up on [Twitter] if you have any questions and good luck out there. :pray:
 
 [^del]: Assume the deletion was accidental, and in such a way that the code still compiles.
 [^typings]: If the typings are very complex, you might even want some way to develop _those_ using TDD, but that's another topic entirely. Check out something like [typings-checker](https://www.npmjs.com/package/typings-checker) if you're interested.
@@ -281,3 +283,4 @@ Good luck out there. :pray:
 
 [immutable to refactoring]: https://dev.to/jlouzado/tdd-your-unit-tests-should-be-immutable-119m
 [flux]: https://www.freecodecamp.org/news/an-introduction-to-the-flux-architectural-pattern-674ea74775c9/
+[twitter]: https://twitter.com/jlouzado
