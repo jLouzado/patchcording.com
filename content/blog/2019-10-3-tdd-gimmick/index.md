@@ -80,11 +80,7 @@ Since refactoring is easier, this whole process happens much more quickly. And y
 
 That might be true, you might not need tests in order to produce good quality code. However, you're not the only person on your team. Also, you're probably not going to be on that team forever; tomorrow you might move on to another project or even to another company. What happens then?
 
-Writing tests is a way to communicate the behaviour of the code without needing to write extensive documentation that no one will ever read (or maintain). Good-quality unit tests save an incredible amount of dev-hours, and can help a team to maintain a stable velocity as it grows.
-
-<!-- prettier-ignore -->
-!!!
-    Don't try to communicate the "Why" of a change using tests. Tests are about behaviour, not purpose.
+Writing tests is a way to communicate[^communicate] the behaviour of the code without needing to write extensive documentation that no one will ever read (or maintain). Good-quality unit tests save an incredible amount of dev-hours, and can help a team to maintain a stable velocity as it grows.
 
 ## What exactly are good-quality tests?
 
@@ -289,6 +285,7 @@ Feel free to hit me up on [Twitter] if you have any questions and good luck out 
 [^typings]: If the typings are very complex, you might even want some way to develop _those_ using TDD, but that's another topic entirely. Check out something like [typings-checker](https://www.npmjs.com/package/typings-checker) if you're interested.
 [^false-positive]: Run it in your IDE and check for yourself if you don't believe me.
 [^behaviour-over-structure]: This is similar to the previous example, where we don't want to write a test to guarantee a particular DOM structure. Check out [the tragedy of 100% code-coverage](https://dev.to/danlebrero/the-tragedy-of-100-code-coverage) for more.
+[^communicate]: One caveat, don't try to communicate the "Why" of a change using tests. Tests are about behaviour, not purpose.
 
 [immutable to refactoring]: https://dev.to/jlouzado/tdd-your-unit-tests-should-be-immutable-119m
 [flux]: https://www.freecodecamp.org/news/an-introduction-to-the-flux-architectural-pattern-674ea74775c9/
