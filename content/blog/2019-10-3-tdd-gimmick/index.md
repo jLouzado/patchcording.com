@@ -75,6 +75,24 @@ In such a scenario, TDD helps in two ways:
 
 Since refactoring is easier, this whole process happens much more quickly. And yes, while fixing one issue you're less likely to introduce a regression.
 
+## This is all horribly complicated! I'm a pretty good programmer, I don't need all this
+
+That might be true, you might not need tests in order to produce good quality code. However, you're not the only person on your team. Also, you're probably not going to be on that team forever; tomorrow you might move on to another project or even to another company. What happens then?
+
+Writing tests is a way to communicate the behaviour of the code without needing to write extensive documentation that no one will ever read (or maintain). Good-quality unit tests save an incredible amount of dev-hours, and can help a team to maintain a stable velocity as it grows.
+
+<!-- prettier-ignore -->
+!!!
+    Don't try to communicate the "Why" of a change using tests. Tests are about behaviour, not purpose.
+
+## What exactly are good-quality tests?
+
+One key aspect of a "good" test would be that they are [immutable to refactoring]. That means that once a test is written, it shouldn't change as long as the requirements don't change.
+
+## Okay, but how does that translate to "saved" dev-hours?
+
+One of hardest parts of building software is simply managing the communication overhead as the team scales. The number of connections between people is proportional to $N^2$ for $N$ members. So very quickly, it becomes almost impossible to keep everyone in sync if it requires talking to everyone about everything. Various solutions like "write documentation" or "write code that is so clear it doesn't need documentation" are all theoretically possible but are largely pipe-dreams. If it's possible to have a test-suite for something, it's the ultimate safety-net and allows developers to make changes without worrying.
+
 ## But won't I need to keep updating old tests if I write them before implementation?
 
 If you're following TDD correctly, this will not be a problem. Once you write a test, it should be [immutable to refactoring] i.e. it won't change as long as the API and the requirements haven't changed.
@@ -146,24 +164,6 @@ assert.isTrue(actual.contains(action.of(A1)))
 ```
 
 Now tomorrow if any number of actions are fired, your test is making sure that this action is also present. And if you've followed TDD so far, extra actions won't be fired from anywhere.
-
-## This is all horribly complicated! I'm a pretty good programmer, I don't need all this
-
-That might be true, you might not need tests in order to produce good quality code. However, you're not the only person on your team. Also, you're probably not going to be on that team forever; tomorrow you might move on to another project or even to another company. What happens then?
-
-Writing tests is a way to communicate the behaviour of the code without needing to write extensive documentation that no one will ever read (or maintain). Good-quality unit tests save an incredible amount of dev-hours, and can help a team to maintain a stable velocity as it grows.
-
-<!-- prettier-ignore -->
-!!!
-    Don't try to communicate the "Why" of a change using tests. Tests are about behaviour, not purpose.
-
-## What exactly are good-quality tests?
-
-One key aspect of a "good" test would be that they are [immutable to refactoring]. That means that once a test is written, it shouldn't change as long as the requirements don't change.
-
-## Okay, but how does that translate to "saved" dev-hours?
-
-One of hardest parts of building software is simply managing the communication overhead as the team scales. The number of connections between people is proportional to $N^2$ for $N$ members. So very quickly, it becomes almost impossible to keep everyone in sync if it requires talking to everyone about everything. Various solutions like "write documentation" or "write code that is so clear it doesn't need documentation" are all theoretically possible but are largely pipe-dreams. If it's possible to have a test-suite for something, it's the ultimate safety-net and allows developers to make changes without worrying.
 
 ## Does that mean there any cases where one shouldn't or can't use TDD?
 
