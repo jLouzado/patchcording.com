@@ -98,9 +98,9 @@ If you find yourself doing TDD but also going back over old-tests a lot, then a 
 
 ### The Function's API needs improvement
 
-When you're writing that first test, spend more time designing your unit's signature to be extensible. Think of the [Open-Closed Principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle), but applied to a specific function instead of a class.
+When you're writing that first test, spend more time designing your unit's signature to be extensible. Think of the [Open-Closed Principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle), but applied to a function instead of a class.
 
-We'll get into the specifics of writing that first test [further down](#your-examples-are-a-bit-weird)
+We'll get into the specifics of writing that first test [further down](#your-examples-are-a-bit-weird).
 
 ### You're writing too much code too soon
 
