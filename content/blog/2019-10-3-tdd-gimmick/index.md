@@ -32,7 +32,9 @@ So confidence (via code-coverage) is the whole game; you will see the above bene
 
 ## But I could just write the function and then the tests and get the same coverage
 
-As far as I've spoken to people, no one disagrees with the need to have some unit tests. That means we all agree that it's possible to write buggy code. That implies that our unit-tests could _also_ have bugs; how would we detect that if we wrote it second?
+Almost everyone I've spoken to agrees that we need unit tests because we know bugs can creep into our code. Meanwhile unit-tests are also code, don't we need to guard against bugs there?
+
+Writing a test after the implementation leaves the possibility open that the test itself is buggy.
 
 ## What do you mean by a buggy test, how can a test have a bug?
 
@@ -53,7 +55,7 @@ Notice anything? The assertion statement is missing, but the actual test will pa
 
 Well yes it's a bit silly, but it highlights a central problem with unit testing. Namely:
 
-> How do you know that the test you've written is correct?
+**How do you know that the test you've written is correct?**
 
 Any alternative proposed to TDD **must** be able to solve this problem or else it cannot be said to be viable.
 
