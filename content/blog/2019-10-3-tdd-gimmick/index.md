@@ -63,7 +63,7 @@ In the example above you expect it to fail, so you'll revisit the test-code when
 
 ## But won't I need to keep updating old tests if I write them before implementation?
 
-No, not really. Ideally once you write a test, it should be immutable as long as the requirement doesn't change.
+If you're following TDD correctly, this will not be a problem. Once you write a test, it should be [immutable to refactoring] i.e. it won't change as long as the API and the requirements haven't changed.
 
 If you find yourself doing TDD, and then going back over old-tests a lot then a couple of things might be going wrong:
 
@@ -157,9 +157,7 @@ Writing tests is a way to communicate the behaviour of the code without needing 
 
 ## What exactly are good-quality tests?
 
-One key aspect of a "good" test would be that they are "immutable to refactoring". That means that once a test is written, it ideally shouldn't change as long as the requirement hasn't changed. I've gone into much more detail in a separate article that you can check out later:
-
-> [Your Tests Should Be Immutable]
+One key aspect of a "good" test would be that they are [immutable to refactoring]. That means that once a test is written, it shouldn't change as long as the requirements don't change.
 
 ## Okay, but how does that translate to "saved" dev-hours?
 
@@ -281,5 +279,5 @@ Good luck out there. :pray:
 [^false-positive]: Run it in your IDE and check for yourself if you don't believe me.
 [^behaviour-over-structure]: This is similar to the previous example, where we don't want to write a test to guarantee a particular DOM structure. Check out [the tragedy of 100% code-coverage](https://dev.to/danlebrero/the-tragedy-of-100-code-coverage) for more.
 
-[your tests should be immutable]: https://dev.to/jlouzado/tdd-your-unit-tests-should-be-immutable-119m
+[immutable to refactoring]: https://dev.to/jlouzado/tdd-your-unit-tests-should-be-immutable-119m
 [flux]: https://www.freecodecamp.org/news/an-introduction-to-the-flux-architectural-pattern-674ea74775c9/
