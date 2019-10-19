@@ -24,7 +24,7 @@ If we have coverage we can have confidence, and with that confidence you get som
 
 - effort to comprehend a piece of code will always grow more slowly than the complexity of that code, because:
   - there's always going to be at least one example of every potential usage, and
-  - you get an opportunity to play around with the code and see how it affects the test-suite.
+  - you get an opportunity to play around with the code and see how it affects the test suite.
 - refactoring code will be much easier and faster because feedback is so much quicker
 - logical errors (bugs) will be much easier to spot and fix, since other people can read your tests and check if all the requirements are being fulfilled.
 - changes to the codebase are guaranteed to not introduce regression bugs.
@@ -88,7 +88,7 @@ One key aspect of a "good" test would be that they are [immutable to refactoring
 
 ## Okay, but how does that translate to "saved" dev-hours?
 
-One of hardest parts of building software is simply managing the communication overhead as the team scales. The number of connections between people is proportional to $N^2$ for $N$ members. So very quickly, it becomes almost impossible to keep everyone in sync if it requires talking to everyone about everything. Various solutions like "write documentation" or "write code that is so clear it doesn't need documentation" are all theoretically possible but are largely pipe-dreams. If it's possible to have a test-suite for something, it's the ultimate safety-net and allows developers to make changes without worrying.
+One of hardest parts of building software is simply managing the communication overhead as the team scales. The number of connections between people is proportional to $N^2$ for $N$ members. So very quickly, it becomes almost impossible to keep everyone in sync if it requires talking to everyone about everything. Various solutions like "write documentation" or "write code that is so clear it doesn't need documentation" are all theoretically possible but are largely pipe-dreams. If it's possible to have a test suite for something, it's the ultimate safety-net and allows developers to make changes without worrying.
 
 ## You say TDD is a timesaver, but updating old tests is a huge-waste of time!
 
@@ -124,7 +124,7 @@ return true
 
 It sounds ridiculous for simple examples, but when writing complex algorithms it's common to fall into the trap of over-engineering. However, [no abstraction is better than the wrong one](https://www.sandimetz.com/blog/2016/1/20/the-wrong-abstraction) and being disciplined about writing minimal code helps us get all the examples working before trying to solve for other concerns like performance, reusability, maintainability, etc.
 
-In a way, TDD pushes us to focus on one thing at a time so that we can be completely focused on it. One test at a time, one solution at a time, and then refactor for one purpose at a time. When you're doing one thing, you don't have to hold everything in your mind since you know that the test-suite has your back.
+In a way, TDD pushes us to focus on one thing at a time so that we can be completely focused on it. One test at a time, one solution at a time, and then refactor for one purpose at a time. When you're doing one thing, you don't have to hold everything in your mind since you know that the test suite has your back.
 
 For a more complex example check out [The Missing Practical Step in TDD](https://itnext.io/the-missing-practical-step-by-step-test-driven-development-a7140ca4b71)
 
