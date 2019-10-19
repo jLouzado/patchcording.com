@@ -17,12 +17,12 @@ As developers I understand that there's a healthy amount of skepticism we all ha
 
 ## Maybe it does, but why should I care about code-coverage?
 
-Just to be clear, 100% code-coverage means that if a function is performing `N` operations, each of them are covered by a unit-test. Put another way, if someone were to delete[^del] a line of code atleast one unit-test _should_ fail.
+Just to be clear, 100% code-coverage means that if a function is performing `N` operations, each of them are covered by a unit-test. Put another way, if someone were to delete[^del] a line of code at least one unit-test _should_ fail.
 
 If we have coverage we can have confidence, and with that confidence you get some effects:
 
 - effort to comprehend a piece of code will always grow more slowly than the complexity of that code, because:
-  - there's always going to be atleast one example of every potential usage, and
+  - there's always going to be at least one example of every potential usage, and
   - you get an opportunity to play around with the code and see how it affects the test-suite.
 - refactoring code will be much easier and faster because feedback is so much quicker
 - logical errors (bugs) will be much easier to spot and fix, since other people can read your tests and check if all the requirements are being fulfilled.
