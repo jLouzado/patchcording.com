@@ -178,7 +178,7 @@ The above example doesn't mean that all view-related things are automatically no
 
 ## Any others?
 
-Yes, if you're writing a new package, and there's two potential APIs that would both work equally fine but they both have different (say) performance implications then that might be a bad use-case for TDD. Tests can't help you choose between two different function signatures, for example. In such a case you're really out near the edge of software-development and you're in research mode. TDD will of more use once you've explored the space sufficiently and sorted out the architecture.
+Yes, if you're writing a new package, and there's two potential APIs that would both work equally fine but they both have different (say) performance implications then that might be a bad use-case for TDD. Tests can't help you choose between two different function signatures, for example. In such a case you're really out near the edge of software-development and you're in research mode. TDD will be of more use once you've explored the space sufficiently and sorted out the architecture.
 
 Speaking of architecture, structure your code so that more things are unit-testable, otherwise you end up with scenarios where you have to compulsively mock everything and you're testing "structure", rather than "behaviour"[^behaviour-over-structure].
 
