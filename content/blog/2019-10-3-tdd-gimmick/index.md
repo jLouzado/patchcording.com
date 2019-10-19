@@ -49,7 +49,7 @@ it('should return the product', () => {
 
 Notice anything? The assertion statement is missing, but the actual test will pass[^false-positive]. Here even though everything looks okay, the test itself is not trustworthy.
 
-## What a ridiculous example, who would forget to add the assertion!
+## What a ridiculous example, that would never happen!
 
 Well yes it's a bit silly, but it highlights a central problem with unit testing. Namely:
 
@@ -67,7 +67,7 @@ No, not really. Ideally once you write a test, it should be immutable as long as
 
 If you find yourself doing TDD, and then going back over old-tests a lot then a couple of things might be going wrong:
 
-### Too much code too soon
+### You're writing too much code too soon
 
 Let's say you're trying to implement an expression: $A+!B$ (A or not-B). The first would be:
 
@@ -93,7 +93,7 @@ In a way, TDD pushes us to focus on one thing at a time so that we can be comple
 
 For a more complex example check out [The Missing Practical Step in TDD](https://itnext.io/the-missing-practical-step-by-step-test-driven-development-a7140ca4b71)
 
-## Your tests are too specific, or too restrictive
+### Your tests are too specific, or too restrictive
 
 This might sound funny, but it's possible for tests to be overly specific. We've touched on this before, but tests should really be agnostic of implementation. In other words they should care about _behaviour_ and not be asserting on structure.
 
@@ -133,7 +133,7 @@ assert.isTrue(actual.contains(action.of(A1)))
 
 Now tomorrow if any number of actions are fired, your test is making sure that this action is also present. And if you've followed TDD so far, extra actions won't be fired from anywhere.
 
-## Hmm... Well what about Logical Errors, TDD is not going to save me there
+## What about Logical Errors, TDD won't save me there
 
 TDD doesn't guarantee that your code is bug-free. It just guarantees that if a line is deleted that a test will fail. Therefore it's still your responsibility to write the correct tests. For example if the requirement was to multiply two numbers, but your tests are checking if the code adds the two together then your code is still wrong.
 
@@ -181,7 +181,7 @@ Speaking of architecture, structure your code so that more things are unit-testa
 
 I can't stress this enough though, almost everything related to Application Development can be done via TDD. As much as possible, irrespective of the structure of your application, extract your business logic into pure functions and TDD the heck out of it. You'll thank yourself later.
 
-## Wait, what does "Produced By TDD" even mean? Your examples are a bit weird
+## Your examples are a bit weird, how do you do TDD?
 
 That's a great question, this is something like [Wittgenstein's Beetle](https://medium.com/@fagnerbrack/wittgenstein-s-beetle-in-software-engineering-dcea89a5db92) where everyone has a thing in their box called a beetle and can only see their own box's contents. So then people might say "TDD is good" or "TDD is bad" and be talking about entirely different things. Here's what I mean when I'm talking about TDD:
 
@@ -262,15 +262,13 @@ export const mul2 = (a: number, b: number) => {
 
 With that your test will pass, and you can start with the next test!
 
-## But this way of writing tests must be super annoying
+## This way of writing tests seems super annoying
 
 Writing code this way is definitely a little unnatural at first, but it makes sure that nothing extraneous ever enters your code base. When people talk about Lean-Testing, and only writing the minimum tests required, this is really what that looks like; no more tests than necessary, no more code than needed.
 
 Over time your intuition for this style will grow and your compiler will come to feel like a helpful (slightly pedantic) aide who just wants the best for you and your code. :)
 
-## Hmm, lemme think about it
-
-Awesome! :smiley:
+## Where would I go to learn more?
 
 If you're looking to read more about TDD, I'd highly recommend [You Don't Know TDD](https://itnext.io/you-dont-know-tdd-691efe670094) which was what I used when I was first learning about this. It's a really rich resource and he deals with much more complex examples than I have here.
 
