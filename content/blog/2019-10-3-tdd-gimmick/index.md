@@ -151,6 +151,10 @@ That might be true, you might not need tests in order to produce good quality co
 
 Writing tests is a way to communicate the behaviour of the code without needing to write extensive documentation that no one will ever read (or maintain). Good-quality unit tests save an incredible amount of dev-hours, and can help a team to maintain a stable velocity as it grows.
 
+<!-- prettier-ignore -->
+!!!
+    Don't try to communicate the "Why" of a change using tests. Tests are about behaviour, not purpose.
+
 ## What exactly are good-quality tests?
 
 One key aspect of a "good" test would be that they are "immutable to refactoring". That means that once a test is written, it ideally shouldn't change as long as the requirement hasn't changed. I've gone into much more detail in a separate article that you can check out later:
