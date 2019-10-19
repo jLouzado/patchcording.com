@@ -93,11 +93,17 @@ One key aspect of a "good" test would be that they are [immutable to refactoring
 
 One of hardest parts of building software is simply managing the communication overhead as the team scales. The number of connections between people is proportional to $N^2$ for $N$ members. So very quickly, it becomes almost impossible to keep everyone in sync if it requires talking to everyone about everything. Various solutions like "write documentation" or "write code that is so clear it doesn't need documentation" are all theoretically possible but are largely pipe-dreams. If it's possible to have a test-suite for something, it's the ultimate safety-net and allows developers to make changes without worrying.
 
-## But won't I need to keep updating old tests if I write them before implementation?
+## You say TDD is a timesaver, but updating old tests is a huge-waste of time!
 
-If you're following TDD correctly, this will not be a problem. Once you write a test, it should be [immutable to refactoring] i.e. it won't change as long as the API and the requirements haven't changed.
+If you're following TDD correctly, you shouldn't find yourself updating old tests. Once you write a test, they should be [immutable to refactoring] i.e. it won't change as long as the API and the requirements haven't changed.
 
-If you find yourself doing TDD, and then going back over old-tests a lot then a couple of things might be going wrong:
+If you find yourself doing TDD but also going back over old-tests a lot, then a couple of things might be going wrong:
+
+### The Function's API needs improvement
+
+When you're writing that first test, spend more time designing your unit's signature to be extensible. Think of the [Open-Closed Principle](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle), but applied to a specific function instead of a class.
+
+We'll get into the specifics of writing that first test [further down](#your-examples-are-a-bit-weird)
 
 ### You're writing too much code too soon
 
@@ -181,7 +187,7 @@ Speaking of architecture, structure your code so that more things are unit-testa
 
 I can't stress this enough though, almost everything related to Application Development can be done via TDD. As much as possible, irrespective of the structure of your application, extract your business logic into pure functions and TDD the heck out of it. You'll thank yourself later.
 
-## Your examples are a bit weird, how do you do TDD?
+## Your examples are a bit weird
 
 That's a great question, this is something like [Wittgenstein's Beetle](https://medium.com/@fagnerbrack/wittgenstein-s-beetle-in-software-engineering-dcea89a5db92) where everyone has a thing in their box called a beetle and can only see their own box's contents. So then people might say "TDD is good" or "TDD is bad" and be talking about entirely different things. Here's what I mean when I'm talking about TDD:
 
