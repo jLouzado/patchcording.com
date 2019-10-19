@@ -137,7 +137,7 @@ This might sound funny, but it's possible for tests to be overly specific. We've
 
 The obvious example would be the test from the earlier section where we're asserting a DOM structure but there's other ways that a test can be too restrictive.
 
-Back to the [Flux] pattern, your first test might be:
+Let's say you're building a [Flux]-like App (using something like React-Redux), and you need some code to emit an `Action`. Your first test might be:
 
 ```ts
 it('should fire Action-A1 when a X is true')
