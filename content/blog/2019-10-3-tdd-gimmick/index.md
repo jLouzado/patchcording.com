@@ -1,6 +1,7 @@
 ---
 title: 'Is TDD just a gimmick?'
 date: '2019-03-24T12:51:00.314Z'
+description: 'Does it really make a difference if I write the test after the implementation?'
 ---
 
 # Is TDD A Gimmick?
