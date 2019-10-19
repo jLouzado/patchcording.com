@@ -63,6 +63,18 @@ The fact that the test is written first solves this problem. If the test is corr
 
 In the example above you expect it to fail, so you'll revisit the test-code when you see it's passing even if no code is present. The rules push you to prioritize confidence in the test first before starting on the change you want to make.
 
+## What about Logical Errors, TDD won't save me there
+
+TDD doesn't guarantee that your code is bug-free. It just guarantees that if a line is deleted that a test will fail. Therefore it's still your responsibility to write the correct tests. For example if the requirement was to multiply two numbers, but your tests are checking if the code adds the two together then your code is still wrong.
+
+In such a scenario, TDD helps in two ways:
+
+- it makes such an error easier to spot during code-review
+  - since your `expected` value will clearly be something different than the requirement, someone can flag it as an issue
+- once the error is spotted, it becomes easier to rewrite the bad test or to add tests for missing edge cases.
+
+Since refactoring is easier, this whole process happens much more quickly. And yes, while fixing one issue you're less likely to introduce a regression.
+
 ## But won't I need to keep updating old tests if I write them before implementation?
 
 If you're following TDD correctly, this will not be a problem. Once you write a test, it should be [immutable to refactoring] i.e. it won't change as long as the API and the requirements haven't changed.
@@ -134,18 +146,6 @@ assert.isTrue(actual.contains(action.of(A1)))
 ```
 
 Now tomorrow if any number of actions are fired, your test is making sure that this action is also present. And if you've followed TDD so far, extra actions won't be fired from anywhere.
-
-## What about Logical Errors, TDD won't save me there
-
-TDD doesn't guarantee that your code is bug-free. It just guarantees that if a line is deleted that a test will fail. Therefore it's still your responsibility to write the correct tests. For example if the requirement was to multiply two numbers, but your tests are checking if the code adds the two together then your code is still wrong.
-
-In such a scenario, TDD helps in two ways:
-
-- it makes such an error easier to spot during code-review
-  - since your `expected` value will clearly be something different than the requirement, someone can flag it as an issue
-- once the error is spotted, it becomes easier to rewrite the bad test or to add tests for missing edge cases.
-
-Since refactoring is easier, this whole process happens much more quickly. And yes, while fixing one issue you're less likely to introduce a regression.
 
 ## This is all horribly complicated! I'm a pretty good programmer, I don't need all this
 
