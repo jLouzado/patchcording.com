@@ -90,7 +90,7 @@ One key aspect of a "good" test would be that they are [immutable to refactoring
 
 One of hardest parts of building software is simply managing the communication overhead as the team scales. The number of connections between people is proportional to $N^2$ for $N$ members. So very quickly, it becomes almost impossible to keep everyone in sync if it requires talking to everyone about everything. Various solutions like "write documentation" or "write code that is so clear it doesn't need documentation" are all theoretically possible but are largely pipe-dreams. If it's possible to have a test suite for something, it's the ultimate safety-net and allows developers to make changes without worrying.
 
-## You say TDD is a timesaver, but updating old tests is a huge-waste of time!
+## You say TDD is a timesaver, but updating old tests is a huge waste of time!
 
 If you're following TDD correctly, you shouldn't find yourself updating old tests. Once you write a test, they should be [immutable to refactoring] i.e. it won't change as long as the API and the requirements haven't changed.
 
@@ -186,7 +186,9 @@ I can't stress this enough though, almost everything related to Application Deve
 
 ## Your examples are a bit weird
 
-That's a great question, this is something like [Wittgenstein's Beetle](https://medium.com/@fagnerbrack/wittgenstein-s-beetle-in-software-engineering-dcea89a5db92) where everyone has a thing in their box called a beetle and can only see their own box's contents. So then people might say "TDD is good" or "TDD is bad" and be talking about entirely different things. Here's what I mean when I'm talking about TDD:
+Well we've been talking about TDD so far but it's sort of a [Wittgenstein's Beetle](https://medium.com/@fagnerbrack/wittgenstein-s-beetle-in-software-engineering-dcea89a5db92) where everyone has a thing in their box called a beetle and can only see their own box's contents. So then people might say "TDD is good" or "TDD is bad" and be talking about entirely different things.
+
+Here's what I mean when I'm talking about TDD:
 
 A quick recap of TDD's rules from [Uncle Bob](http://www.javiersaldana.com/articles/tech/refactoring-the-three-laws-of-tdd):
 
